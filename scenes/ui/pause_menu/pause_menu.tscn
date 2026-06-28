@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://bfrr1gifmilhm"]
+
+[ext_resource type="Script" uid="uid://curw6wbcfid7g" path="res://scenes/ui/pause_menu/pause_menu.gd" id="1_kgchh"]
+
+[node name="PauseMenu" type="Control" unique_id=1644517503]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kgchh")
+
+[node name="Panel" type="Panel" parent="." unique_id=54555265]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -505.0
+offset_top = -293.0
+offset_right = 505.0
+offset_bottom = 293.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=697612966]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TabContainer" type="TabContainer" parent="Panel/MarginContainer" unique_id=960095074]
+layout_mode = 2
+current_tab = 0
+
+[node name="Audio" type="Control" parent="Panel/MarginContainer/TabContainer" unique_id=2010201443]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/TabContainer/Audio" unique_id=2013416217]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/TabContainer/Audio/MarginContainer" unique_id=1545815993]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=1168458222]
+layout_mode = 2
+
+[node name="MainVolumeLabel" type="Label" parent="Panel/MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer" unique_id=818180001]
+layout_mode = 2
+text = "Main volume"
+vertical_alignment = 1
+
+[node name="MainVolumeHSlider" type="HSlider" parent="Panel/MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1599606170]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=1270918668]
+layout_mode = 2
+
+[node name="MusicVolumeLabel" type="Label" parent="Panel/MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1416997074]
+layout_mode = 2
+text = "Music volume"
+vertical_alignment = 1
+
+[node name="MusicVolumeHSlider" type="HSlider" parent="Panel/MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1928118097]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=1660553585]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -271.0
+offset_top = 16.0
+offset_right = 271.0
+offset_bottom = 39.0
+grow_horizontal = 2
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="Panel" unique_id=1773272590]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_top = 15.0
+offset_right = -18.0
+offset_bottom = 55.0
+grow_horizontal = 0
+text = "x"
+
+[connection signal="pressed" from="Panel/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b2b25by4eun2b"]
+
+[ext_resource type="Script" uid="uid://cppke1j8tqfe5" path="res://scenes/environment/main.gd" id="1_u2pvs"]
+[ext_resource type="PackedScene" uid="uid://4655nbxst6wv" path="res://scenes/environment/player/player.tscn" id="2_ksokc"]
+[ext_resource type="PackedScene" uid="uid://b7akkrjt1bdan" path="res://scenes/ui/game_overlay/game_overlay.tscn" id="2_oyn3l"]
+[ext_resource type="PackedScene" uid="uid://ck42jbg1x8rww" path="res://scenes/ui/title_menu/title_menu.tscn" id="3_r28lp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f61wl"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_f61wl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f61wl"]
+size = Vector3(60, 2, 60)
+
+[node name="Main" type="Node3D" unique_id=332108087]
+script = ExtResource("1_u2pvs")
+
+[node name="Environment" type="Node3D" parent="." unique_id=825767335]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment" unique_id=1702133034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+physics_material_override = SubResource("PhysicsMaterial_f61wl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/StaticBody3D" unique_id=653929818]
+shape = SubResource("WorldBoundaryShape3D_f61wl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/StaticBody3D" unique_id=1941540354]
+mesh = SubResource("BoxMesh_f61wl")
+
+[node name="Player" parent="Environment" unique_id=264216900 instance=ExtResource("2_ksokc")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=437412057]
+
+[node name="GameOverlay" parent="CanvasLayer" unique_id=1089916803 instance=ExtResource("2_oyn3l")]
+
+[node name="TitleMenu" parent="CanvasLayer" unique_id=1055916824 instance=ExtResource("3_r28lp")]

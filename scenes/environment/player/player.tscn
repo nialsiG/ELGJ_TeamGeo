@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://4655nbxst6wv"]
+
+[ext_resource type="PackedScene" uid="uid://bq61m61oj2khx" path="res://assets_graph/godot_plush_model.glb" id="1_5dpqq"]
+[ext_resource type="Script" uid="uid://cbl603c8yj88" path="res://scenes/environment/player/player.gd" id="1_r3egp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f61wl"]
+radius = 0.9423828
+height = 1.9089355
+
+[node name="Player" type="CharacterBody3D" unique_id=264216900]
+script = ExtResource("1_r3egp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2083398441]
+transform = Transform3D(1, 0, 0, 0, -2.9802322e-08, 1, 0, -1, -2.9802322e-08, 0, 4, 0)
+spot_range = 6.0
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1704960644]
+transform = Transform3D(1, 0, 0, 0, 0.7193131, 0.69468606, 0, -0.69468606, 0.7193131, 0, 5.2561016, 3.0914068)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=629943726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8548994, 0)
+shape = SubResource("CapsuleShape3D_f61wl")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=120606109]
+
+[node name="godot_plush_model" parent="Pivot" unique_id=1575741438 instance=ExtResource("1_5dpqq")]
