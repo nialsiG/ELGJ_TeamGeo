@@ -2,20 +2,30 @@
 
 [ext_resource type="PackedScene" uid="uid://bq61m61oj2khx" path="res://assets_graph/godot_plush_model.glb" id="1_5dpqq"]
 [ext_resource type="Script" uid="uid://cbl603c8yj88" path="res://scenes/environment/player/player.gd" id="1_r3egp"]
+[ext_resource type="PackedScene" uid="uid://byflix3l0jxrw" path="res://scenes/state_machine/state_machine.tscn" id="3_7dpl0"]
+[ext_resource type="Script" uid="uid://b0jt51ggoa0y1" path="res://scenes/state_machine/idle_state.gd" id="4_8873i"]
+[ext_resource type="Script" uid="uid://dov5b85pi7e2" path="res://scenes/state_machine/carry_state.gd" id="5_gdabo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f61wl"]
 radius = 0.9423828
 height = 1.9089355
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f61wl"]
+radius = 1.3720703
+
 [node name="Player" type="CharacterBody3D" unique_id=264216900]
 script = ExtResource("1_r3egp")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1704960644]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.7554493, 0.65520716, 0, -0.65520716, 0.7554493, 0, 27.294735, 26.894436)
+keep_aspect = 0
+projection = 1
+size = 20.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2083398441]
 transform = Transform3D(1, 0, 0, 0, -2.9802322e-08, 1, 0, -1, -2.9802322e-08, 0, 4, 0)
 spot_range = 6.0
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1704960644]
-transform = Transform3D(1, 0, 0, 0, 0.7193131, 0.69468606, 0, -0.69468606, 0.7193131, 0, 5.2561016, 3.0914068)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=629943726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8548994, 0)
@@ -24,3 +34,23 @@ shape = SubResource("CapsuleShape3D_f61wl")
 [node name="Pivot" type="Node3D" parent="." unique_id=120606109]
 
 [node name="godot_plush_model" parent="Pivot" unique_id=1575741438 instance=ExtResource("1_5dpqq")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=432351597]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1310302800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_f61wl")
+
+[node name="StateMachine" parent="." unique_id=165164541 node_paths=PackedStringArray("initial_state") instance=ExtResource("3_7dpl0")]
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=338674255]
+script = ExtResource("4_8873i")
+metadata/_custom_type_script = "uid://bswfviad8w44o"
+
+[node name="CarryState" type="Node" parent="StateMachine" unique_id=45541633]
+script = ExtResource("5_gdabo")
+metadata/_custom_type_script = "uid://bswfviad8w44o"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

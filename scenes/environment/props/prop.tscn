@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://3hcp6ib2agia"]
+
+[ext_resource type="Script" uid="uid://3k164xbgpqvr" path="res://scenes/environment/props/prop.gd" id="1_afju1"]
+
+[node name="Prop" type="CharacterBody3D" unique_id=2143509679]
+script = ExtResource("1_afju1")
+
+[node name="Shape" type="Node3D" parent="." unique_id=1067496466]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=41443396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98217773, 0)
+debug_color = Color(0.95686275, 0.2, 0.19607843, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1153261542]
+offset_left = -75.0
+offset_top = -46.0
+offset_right = 75.0
+offset_bottom = -23.0
+text = "CLICK TO INTERACT"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
