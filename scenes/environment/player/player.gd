@@ -1,9 +1,12 @@
 extends CharacterBody3D
+class_name Player
 
 @export var move_speed: float = 10.0
 
 # nodes
 @onready var pivot: Node3D = $Pivot
+@onready var state_machine: StateMachine = $StateMachine
+@onready var camera_3d: Camera3D = %Camera3D
 
 # runtime variables
 var target_velocity: Vector3 = Vector3.ZERO
@@ -57,3 +60,14 @@ func _physics_process(delta):
 	# Moving the Character
 	velocity = target_velocity
 	move_and_slide()
+
+
+func _on_area_3d_body_entered(body):
+	if body is Prop:
+		print("Player: you can interact with ", body.prop_resource.prop_name)
+		body.MakeInteractable()
+
+func _on_area_3d_body_exited(body):
+	if body is Prop:
+		print("Player: you can no longer interact with ", body.prop_resource.prop_name)
+		body.MakeNonInteractable()

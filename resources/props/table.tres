@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PropResource" format=3 uid="uid://dxpgrddjdfyx4"]
+
+[ext_resource type="Script" uid="uid://bymgb6v0yfwjr" path="res://scenes/environment/props/prop_resource.gd" id="1_6a4cq"]
+
+[resource]
+script = ExtResource("1_6a4cq")
+prop_name = "Table"
+metadata/_custom_type_script = "uid://bymgb6v0yfwjr"

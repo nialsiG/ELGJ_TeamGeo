@@ -3,34 +3,42 @@
 [ext_resource type="Script" uid="uid://cppke1j8tqfe5" path="res://scenes/environment/main.gd" id="1_u2pvs"]
 [ext_resource type="PackedScene" uid="uid://4655nbxst6wv" path="res://scenes/environment/player/player.tscn" id="2_ksokc"]
 [ext_resource type="PackedScene" uid="uid://b7akkrjt1bdan" path="res://scenes/ui/game_overlay/game_overlay.tscn" id="2_oyn3l"]
+[ext_resource type="PackedScene" uid="uid://3hcp6ib2agia" path="res://scenes/environment/props/prop.tscn" id="3_gvnaq"]
 [ext_resource type="PackedScene" uid="uid://ck42jbg1x8rww" path="res://scenes/ui/title_menu/title_menu.tscn" id="3_r28lp"]
+[ext_resource type="Resource" uid="uid://dxpgrddjdfyx4" path="res://resources/props/table.tres" id="4_h2xxg"]
+[ext_resource type="PackedScene" uid="uid://dsrdrbos2ubrp" path="res://assets_graph/Blockout_studio_v1.fbx" id="5_nbkd2"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f61wl"]
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_f61wl"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_f61wl"]
-size = Vector3(60, 2, 60)
+[sub_resource type="BoxShape3D" id="BoxShape3D_afju1"]
 
 [node name="Main" type="Node3D" unique_id=332108087]
 script = ExtResource("1_u2pvs")
 
 [node name="Environment" type="Node3D" parent="." unique_id=825767335]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Environment" unique_id=1702133034]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-physics_material_override = SubResource("PhysicsMaterial_f61wl")
+[node name="Blockout_studio_v1" parent="Environment" unique_id=353549218 instance=ExtResource("5_nbkd2")]
+transform = Transform3D(380.99966, 0, 323.78885, 0, 499.99997, 0, -323.78885, 0, 380.99966, -25, 0, -5)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/StaticBody3D" unique_id=653929818]
-shape = SubResource("WorldBoundaryShape3D_f61wl")
+[node name="Prop" parent="Environment/Blockout_studio_v1" unique_id=1828815112 instance=ExtResource("3_gvnaq")]
+transform = Transform3D(0.002, 0, 0, 0, 0.0019999999, 0, 0, 0, 0.002, 0.055953246, 0.0013001185, 0.015569784)
+prop_resource = ExtResource("4_h2xxg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/StaticBody3D" unique_id=1941540354]
-mesh = SubResource("BoxMesh_f61wl")
+[node name="CollisionShape3D" parent="Environment/Blockout_studio_v1/Prop" index="1" unique_id=41443396]
+transform = Transform3D(-1.9594865, 0, 0, 0, 3.1037252, 0, 0, 0, -14.920537, 0, 0.45971227, -0.16275978)
+shape = SubResource("BoxShape3D_afju1")
+
+[node name="Label" parent="Environment/Blockout_studio_v1/Prop" index="2" unique_id=1153261542]
+visible = false
 
 [node name="Player" parent="Environment" unique_id=264216900 instance=ExtResource("2_ksokc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1808331, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1431639790]
+transform = Transform3D(0.91146064, -0.3685841, 0.18271622, 0, 0.4441466, 0.89595425, -0.4113873, -0.816627, 0.40482214, 0, 10.962885, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=437412057]
 
 [node name="GameOverlay" parent="CanvasLayer" unique_id=1089916803 instance=ExtResource("2_oyn3l")]
 
 [node name="TitleMenu" parent="CanvasLayer" unique_id=1055916824 instance=ExtResource("3_r28lp")]
+
+[editable path="Environment/Blockout_studio_v1/Prop"]
