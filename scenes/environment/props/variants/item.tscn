@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b40kp27xgq6h8"]
+
+[ext_resource type="PackedScene" uid="uid://3hcp6ib2agia" path="res://scenes/environment/props/prop.tscn" id="1_phxd4"]
+[ext_resource type="Script" uid="uid://cvlbx6ydvdgit" path="res://scenes/environment/props/variants/item.gd" id="2_epvbs"]
+
+[node name="Item" unique_id=2143509679 instance=ExtResource("1_phxd4")]
+script = ExtResource("2_epvbs")
+
+[node name="InteractLabel" parent="." index="2" unique_id=1153261542]
+visible = false

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PropResource" format=3 uid="uid://dpi3tj8r0utar"]
+
+[ext_resource type="Script" uid="uid://bymgb6v0yfwjr" path="res://scenes/environment/props/prop_resource.gd" id="1_1d418"]
+[ext_resource type="ArrayMesh" uid="uid://b6d5x01rdwnba" path="res://assets_graph/furniture/canape.tres" id="1_gq7rn"]
+
+[resource]
+script = ExtResource("1_1d418")
+prop_name = "Canape"
+prop_mesh = ExtResource("1_gq7rn")
+interact_instruction = "This is my couch... so comfy..."
+metadata/_custom_type_script = "uid://bymgb6v0yfwjr"

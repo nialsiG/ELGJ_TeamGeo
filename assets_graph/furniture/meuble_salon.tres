@@ -1,0 +1,40 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://daton30loq2bu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1iuh"]
+resource_name = "Bois"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.4506838, 0.39645883, 0.32161286, 1)
+emission_enabled = true
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_181f0"]
+_surfaces = [{
+"aabb": AABB(1.5258789e-07, 0, -3.5762786e-09, 0.79999983, 0.4, 0.40000013),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgAEAAAAAwAFAAEAAgABAAUABgADAAAAAAAEAAYABQADAAYABAACAAcABQAHAAIABwAGAAQABgAHAAUA"),
+"name": "Bois",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("CtcjNAAAAACPwnWxCtcjNAAAAADRzMw+zcxMPwAAAADRzMw+CtcjNM3MzD6PwnWxzcxMPwAAAACPwnWxCtcjNM3MzD7RzMw+zcxMP83MzD6PwnWxzcxMP83MzD7RzMw+")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "meuble_salon"
+_surfaces = [{
+"aabb": AABB(1.5258789e-07, 0, -3.5762786e-09, 0.79999983, 0.4, 0.40000013),
+"attribute_data": PackedByteArray("AADAPgAAgD4AAMA+AAAAAAAAID8AAAAAAAAgPwAAgD4AAGA/AACAPwAAID8AAIA/AAAgPwAAQD8AAEA/AAAgPwAAgD4AACA/AADAPgAAQD8AAMA+AACAPwAAAD4AAIA/AABAPwAAID8AACA/AABAPwAAwD4AAEA/AACAPgAAID8AAMA+AACAPgAAID8AAIA+AABAPwAAID8AAIA+AAAgPwAAwD4AAEA/AAAgPwAAQD8AACA/AACAPwAAwD4AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_e1iuh"),
+"name": "Bois",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("CtcjNAAAAACPwnWxCtcjNAAAAADRzMw+zcxMPwAAAADRzMw+zcxMPwAAAACPwnWxzcxMPwAAAACPwnWxzcxMPwAAAADRzMw+zcxMP83MzD7RzMw+zcxMP83MzD6PwnWxCtcjNM3MzD6PwnWxCtcjNM3MzD7RzMw+CtcjNAAAAADRzMw+CtcjNAAAAACPwnWxzcxMP83MzD6PwnWxzcxMP83MzD7RzMw+CtcjNM3MzD7RzMw+CtcjNM3MzD6PwnWxCtcjNAAAAACPwnWxzcxMPwAAAACPwnWxzcxMP83MzD6PwnWxCtcjNM3MzD6PwnWxCtcjNM3MzD7RzMw+zcxMP83MzD7RzMw+zcxMPwAAAADRzMw+CtcjNAAAAADRzMw+/38AAP///7//fwAA////v/9/AAD///+//38AAP///7////9/H+4AgP///3//////////fx/uAID///9//98AgAAA/3//fzjMAAD/f/9/VNUAAP9//384zAAA/3//f/+//3///////7//f///////v/9///////+//3///////7//////////v/////////+//////////7//////////v/9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_181f0")

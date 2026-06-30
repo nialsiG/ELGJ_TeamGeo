@@ -6,7 +6,6 @@ class_name Player
 # nodes
 @onready var pivot: Node3D = $Pivot
 @onready var state_machine: StateMachine = $StateMachine
-@onready var camera_3d: Camera3D = %Camera3D
 
 # runtime variables
 var target_velocity: Vector3 = Vector3.ZERO
@@ -18,6 +17,7 @@ func _ready():
 	SignalManager.StopGame.connect(OnStop)
 	SignalManager.PauseGame.connect(OnPause)
 	SignalManager.UnpauseGame.connect(OnUnpause)
+	add_to_group("player")
 
 func OnStart():
 	global_position = Vector3(0, 0, 0)
