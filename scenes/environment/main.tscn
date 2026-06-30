@@ -5,35 +5,53 @@
 [ext_resource type="PackedScene" uid="uid://b7akkrjt1bdan" path="res://scenes/ui/game_overlay/game_overlay.tscn" id="2_oyn3l"]
 [ext_resource type="PackedScene" uid="uid://3hcp6ib2agia" path="res://scenes/environment/props/prop.tscn" id="3_gvnaq"]
 [ext_resource type="PackedScene" uid="uid://ck42jbg1x8rww" path="res://scenes/ui/title_menu/title_menu.tscn" id="3_r28lp"]
-[ext_resource type="Resource" uid="uid://dxpgrddjdfyx4" path="res://resources/props/table.tres" id="4_h2xxg"]
+[ext_resource type="Resource" uid="uid://dpi3tj8r0utar" path="res://resources/props/canape.tres" id="4_5l774"]
+[ext_resource type="PackedScene" uid="uid://cd7kg1te2qjm6" path="res://scenes/environment/decor.tscn" id="4_h2xxg"]
+[ext_resource type="ArrayMesh" uid="uid://b6d5x01rdwnba" path="res://assets_graph/furniture/canape.tres" id="5_3uebx"]
 [ext_resource type="PackedScene" uid="uid://dsrdrbos2ubrp" path="res://assets_graph/Blockout_studio_v1.fbx" id="5_nbkd2"]
+[ext_resource type="PackedScene" uid="uid://bq61m61oj2khx" path="res://assets_graph/godot_plush_model.glb" id="8_f5677"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_afju1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3uebx"]
+size = Vector3(0.6, 0.40000004, 1.6000004)
 
 [node name="Main" type="Node3D" unique_id=332108087]
 script = ExtResource("1_u2pvs")
 
 [node name="Environment" type="Node3D" parent="." unique_id=825767335]
 
-[node name="Blockout_studio_v1" parent="Environment" unique_id=353549218 instance=ExtResource("5_nbkd2")]
-transform = Transform3D(380.99966, 0, 323.78885, 0, 499.99997, 0, -323.78885, 0, 380.99966, -25, 0, -5)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1431639790]
+transform = Transform3D(0.91146064, -0.3685842, 0.18271627, 0, 0.4441466, 0.89595413, -0.4113873, -0.81662697, 0.4048221, 0, 10.962885, 0)
 
-[node name="Prop" parent="Environment/Blockout_studio_v1" unique_id=1828815112 instance=ExtResource("3_gvnaq")]
-transform = Transform3D(0.002, 0, 0, 0, 0.0019999999, 0, 0, 0, 0.002, 0.055953246, 0.0013001185, 0.015569784)
-prop_resource = ExtResource("4_h2xxg")
-
-[node name="CollisionShape3D" parent="Environment/Blockout_studio_v1/Prop" index="1" unique_id=41443396]
-transform = Transform3D(-1.9594865, 0, 0, 0, 3.1037252, 0, 0, 0, -14.920537, 0, 0.45971227, -0.16275978)
-shape = SubResource("BoxShape3D_afju1")
-
-[node name="Label" parent="Environment/Blockout_studio_v1/Prop" index="2" unique_id=1153261542]
+[node name="Reference" parent="Environment" unique_id=353549218 instance=ExtResource("5_nbkd2")]
+transform = Transform3D(0.7031062, 0, 0.71108484, 0, 1, 0, -0.71108484, 0, 0.7031062, -4.2233434, 9.536743e-07, -2.4990768)
 visible = false
 
 [node name="Player" parent="Environment" unique_id=264216900 instance=ExtResource("2_ksokc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1808331, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0.18083312, 0)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1431639790]
-transform = Transform3D(0.91146064, -0.3685841, 0.18271622, 0, 0.4441466, 0.89595425, -0.4113873, -0.816627, 0.40482214, 0, 10.962885, 0)
+[node name="Decor" parent="Environment" unique_id=391982823 instance=ExtResource("4_h2xxg")]
+transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071067, -4.232088, 0, -2.5761776)
+
+[node name="Mobilier" type="Node3D" parent="Environment/Decor" unique_id=258422883]
+
+[node name="Prop" parent="Environment/Decor/Mobilier" unique_id=2143509679 instance=ExtResource("3_gvnaq")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 3.4124656, 0.21589231, 3.4124649)
+prop_resource = ExtResource("4_5l774")
+
+[node name="MeshInstance3D" parent="Environment/Decor/Mobilier/Prop" index="0" unique_id=378062931]
+mesh = ExtResource("5_3uebx")
+
+[node name="InteractLabel" parent="Environment/Decor/Mobilier/Prop" index="2" unique_id=1153261542]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Decor/Mobilier/Prop" unique_id=1651658289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4901161e-07, 0, 5.9604645e-08)
+shape = SubResource("BoxShape3D_3uebx")
+
+[node name="Items" type="Node3D" parent="Environment/Decor" unique_id=767803827]
+
+[node name="godot_plush_model" parent="Environment/Decor/Items" unique_id=987107396 instance=ExtResource("8_f5677")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.3661878, 0.07130325, 2.3661878)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=437412057]
 
@@ -41,4 +59,4 @@ transform = Transform3D(0.91146064, -0.3685841, 0.18271622, 0, 0.4441466, 0.8959
 
 [node name="TitleMenu" parent="CanvasLayer" unique_id=1055916824 instance=ExtResource("3_r28lp")]
 
-[editable path="Environment/Blockout_studio_v1/Prop"]
+[editable path="Environment/Decor/Mobilier/Prop"]

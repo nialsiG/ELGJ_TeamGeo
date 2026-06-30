@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PropResource" format=3 uid="uid://04452n1osv1q"]
+
+[ext_resource type="ArrayMesh" uid="uid://v7jj8apwkofn" path="res://assets_graph/items/godot_plush.tres" id="1_1rdek"]
+[ext_resource type="Script" uid="uid://bymgb6v0yfwjr" path="res://scenes/environment/props/prop_resource.gd" id="1_w15fa"]
+
+[resource]
+script = ExtResource("1_w15fa")
+prop_name = " Godot Plush"
+prop_mesh = ExtResource("1_1rdek")
+metadata/_custom_type_script = "uid://bymgb6v0yfwjr"

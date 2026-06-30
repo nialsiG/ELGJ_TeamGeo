@@ -1,0 +1,40 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://bxg5ahwd7hir7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1iuh"]
+resource_name = "Bois"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.4506838, 0.39645883, 0.32161286, 1)
+emission_enabled = true
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_72g8w"]
+_surfaces = [{
+"aabb": AABB(-0.4, 0, -9.536743e-08, 0.4, 0.4, 1),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQAAwACAAUABQACAAEAAAADAAYABQAGAAMABgAEAAAAAQAHAAUABgAFAAcABAAHAAEABwAEAAYA"),
+"name": "Bois",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("zczMvs3MzD7//38/zczMvgAAAAD//38/zczMvgAAAADNzMyzzczMvs3MzD7NzMyzAACAJs3MzD7//38/AACAJgAAAAAK16OzAACAJs3MzD4K16OzAACAJgAAAAD//38/")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "bar"
+_surfaces = [{
+"aabb": AABB(-0.4, 0, -9.536743e-08, 0.4, 0.4, 1),
+"attribute_data": PackedByteArray("AAAgPwAAQD8AACA/AACAPwAAwD4AAIA/AADAPgAAQD8AAMA+AAAAPwAAID8AAAA/AAAgPwAAQD8AAMA+AABAPwAAID8AAIA+AAAgPwAAAD8AAMA+AAAAPwAAwD4AAIA+AAAgPwAAAAAAACA/AACAPgAAwD4AAIA+AADAPgAAAAAAAGA/AABAPwAAYD8AAIA/AAAgPwAAgD8AACA/AABAPwAAwD4AAEA/AADAPgAAgD8AAAA+AACAPwAAAD4AAEA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_e1iuh"),
+"name": "Bois",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("zczMvs3MzD7//38/zczMvgAAAAD//38/zczMvgAAAADNzMyzzczMvs3MzD7NzMyzAACAJs3MzD4K16OzAACAJs3MzD7//38/zczMvs3MzD7//38/zczMvs3MzD7NzMyzAACAJgAAAAD//38/AACAJs3MzD7//38/AACAJs3MzD4K16OzAACAJgAAAAAK16OzzczMvgAAAAD//38/AACAJgAAAAD//38/AACAJgAAAAAK16OzzczMvgAAAADNzMyzAACAJs3MzD7//38/AACAJgAAAAD//38/zczMvgAAAAD//38/zczMvs3MzD7//38/zczMvs3MzD7NzMyzzczMvgAAAADNzMyzAACAJgAAAAAK16OzAACAJs3MzD4K16OzAAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//f////3//v/9/////f/+//3////9//7//f////3//v////3//f/+/////f/9//7////9//3//v////3//f/+//38AAP9//7//fwAA/3//v/9/AAD/f/+//38AAP9//7//f/9/////v/9//3////+//3//f////7//f/9/////v/////8AAP+//////wAA/7//////AAD/v/////8AAP+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_72g8w")
