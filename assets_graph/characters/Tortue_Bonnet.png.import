@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0djqhscspy3y"
-path.s3tc="res://.godot/imported/icon.svg-e86f07ae1b02f9349d240c12cc80dcc3.s3tc.ctex"
+uid="uid://bv4c7qu4878vk"
+path.s3tc="res://.godot/imported/Tortue_Bonnet.png-1beaae8572159585af05fceadeb0d538.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets_graph/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-e86f07ae1b02f9349d240c12cc80dcc3.s3tc.ctex"]
+source_file="res://assets_graph/characters/Tortue_Bonnet.png"
+dest_files=["res://.godot/imported/Tortue_Bonnet.png-1beaae8572159585af05fceadeb0d538.s3tc.ctex"]
 
 [params]
 
@@ -39,6 +39,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
